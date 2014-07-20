@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FinanceFragment</string>
+    <string name="title_scenario_detail">Scenario Detail</string>
+	<string name="action_settings">Settings</string>
+    <string name="false_button">False</string>
+    <string name="true_button">True</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="next_button">Next</string>
+    <string name="back_button">Back</string>
+    <string name="graph_button">Graph</string>
+    <string name="delete_button">DeleteDB</string>
+    <string name="question_netWorth">What is your current net worth?</string>
+    <string name="question_salary">What is your pre-tax yearly salary?</string>
+    <string name="question_raise">What is your yearly salary growth rate?</string>
+    <string name="question_401k">What is your percentage contribution to your 401(k)?</string>
+    <string name="question_mortgage">What is your monthly mortgage/rent?</string>
+    <string name="question_fedTaxRate">What is your federal income tax rate?</string>
+    <string name="question_stateTaxRate">What is your state income tax rate?</string>
+    <string name="question_carPayment">What is your monthly car payment?</string>
+    <string name="title_activity_create_scenario">CreateScenarioActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_scenario_list">Scenarios</string>
+    
+    
+</resources>
