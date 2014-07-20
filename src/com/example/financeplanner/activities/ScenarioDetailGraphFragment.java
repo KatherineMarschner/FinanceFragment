@@ -63,9 +63,6 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// createNetWorthGraph();
-
-		// }
 	}
 
 	@Override
@@ -75,8 +72,6 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		View view = inflater.inflate(R.layout.fragment_scenario_detail,
 				container, false);
 
-		// add the data here if necessary
-		// ...
 		// I do not understand all of this yet. Each view has multiple layouts.
 		// Each layout can add views within
 		// it I believe. I was passed a container. I expanded the fragment view.
