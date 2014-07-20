@@ -29,7 +29,7 @@ import com.example.financefragment.dummy.DummyContent;
 /**
  * A fragment representing a single Scenario detail screen. This fragment is
  * either contained in a {@link ScenarioListActivity} in two-pane mode (on
- * tablets) or a {@link ScenarioDetailGraphActivity} on handsets.
+ * tablets) or a {@link ScenarioDetailGraphActivity} on handsets. test
  */
 public class ScenarioDetailGraphFragment extends Fragment implements
 		LoaderManager.LoaderCallbacks<Cursor> {
