@@ -16,12 +16,14 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.android.financeplanner.database.FinanceDataModel;
+import com.android.financeplanner.model.GraphDataCalculator;
 import com.android.financeplanner.model.Question;
 import com.example.financefragment.R;
 import com.example.financefragment.dummy.DummyContent;
@@ -120,9 +122,19 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		 * to the series. A TimeSeries object is what is graphed
 		 */
 		TimeSeries mSeries = new TimeSeries("Net Worth");
-		for (int i = 0; i < questions.size(); i++) {
-			mSeries.add(questions.get(i).getmId(), questions.get(i)
-					.getmAnswer());
+
+		/* This just graphs the user answers, which is not what we want */
+		// for (int i = 0; i < questions.size(); i++) {
+		// mSeries.add(questions.get(i).getmId(), questions.get(i)
+		// .getmAnswer());
+		// }
+
+		/* Class which can calculate data that we actually want to graph */
+		GraphDataCalculator calculator = new GraphDataCalculator(questions);
+		int[] netWorthData = calculator.getNetWorthArray();
+		for (int i = 0; i < netWorthData.length; i++) {
+			Log.w("Answer", Integer.toString(netWorthData[i]));
+			mSeries.add(i, netWorthData[i]);
 		}
 
 		/*
