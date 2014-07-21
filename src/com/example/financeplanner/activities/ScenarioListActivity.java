@@ -52,13 +52,12 @@ public class ScenarioListActivity extends FragmentActivity implements
 					.findFragmentById(R.id.scenario_list))
 					.setActivateOnItemClick(true);
 		}
-		datasource = new FinanceDataModel(this);
-
-		datasource.open();
-
-		// mQuestionBank = datasource.getAll();
-
-		databaseLength = datasource.getLength();
+		// datasource = new FinanceDataModel(this);
+		// datasource.open();
+		//
+		// // mQuestionBank = datasource.getAll();
+		//
+		// databaseLength = datasource.getLength();
 
 		// TODO: If exposing deep links into your app, handle intents here.
 	}
@@ -76,8 +75,7 @@ public class ScenarioListActivity extends FragmentActivity implements
 			Bundle arguments = new Bundle();
 			arguments.putString(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
 			ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
-			fragment.setDataSource(datasource);
-
+			// fragment.setDataSource(datasource);
 			getSupportFragmentManager().beginTransaction()
 					.replace(R.id.scenario_detail_container, fragment).commit();
 

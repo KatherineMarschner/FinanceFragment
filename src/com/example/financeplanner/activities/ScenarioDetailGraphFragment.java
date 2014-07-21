@@ -38,9 +38,12 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 	 * represents.
 	 */
 	public static final String ARG_ITEM_ID = "item_id";
-	FinanceDataModel datasource;
+
 	private GraphicalView mChartView;
 	List<Question> questions = new ArrayList<Question>();
+	private int databaseLength = 0;
+	private FinanceDataModel datasource;
+
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
@@ -54,10 +57,10 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 
 	}
 
-	public void setDataSource(FinanceDataModel datasource) {
-		this.datasource = datasource;
-
-	}
+	// public void setDataSource(FinanceDataModel datasource) {
+	// this.datasource = datasource;
+	//
+	// }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,9 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		// Inside the fragment view there
 		// was a linear layout. I added the view from the chart to this linear
 		// layout. I need to learn more here
+		datasource = new FinanceDataModel(getActivity());
+		datasource.open();
+		databaseLength = datasource.getLength();
 		questions = datasource.getAll();
 
 		LinearLayout layout = (LinearLayout) view
