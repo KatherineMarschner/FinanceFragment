@@ -20,6 +20,14 @@ public class GraphDataCalculator {
 	private double stateTaxRate;
 	private double monthlyCarPayment;
 
+	/**
+	 * Takes a list of questions and fills out the variables necessary for
+	 * creating graphable data
+	 * 
+	 * @param questions
+	 *            : list of Question data types which contain the variables used
+	 *            to calculate all values to be graphed
+	 */
 	public GraphDataCalculator(List<Question> questions) {
 
 		// TODO use enums instead of hard-coding the values 0, 1, ...
