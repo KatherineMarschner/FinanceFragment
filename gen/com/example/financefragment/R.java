@@ -39,6 +39,7 @@ public final class R {
         public static final int activity_scenario_list=0x7f030001;
         public static final int activity_scenario_twopane=0x7f030002;
         public static final int fragment_scenario_detail=0x7f030003;
+        public static final int fragment_scenario_edit=0x7f030004;
     }
     public static final class string {
         public static final int action_settings=0x7f040002;

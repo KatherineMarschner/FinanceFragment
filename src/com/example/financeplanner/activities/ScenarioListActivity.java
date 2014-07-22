@@ -38,16 +38,19 @@ public class ScenarioListActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_scenario_list);
-
+		/*
+		 * The detail container view will be present only in the large-screen
+		 * layouts (res/values-large and res/values-sw600dp). If this view is
+		 * present, then the activity should be in two-pane mode.
+		 */
 		if (findViewById(R.id.scenario_detail_container) != null) {
-			// The detail container view will be present only in the
-			// large-screen layouts (res/values-large and
-			// res/values-sw600dp). If this view is present, then the
-			// activity should be in two-pane mode.
+
 			mTwoPane = true;
 
-			// In two-pane mode, list items should be given the
-			// 'activated' state when touched.
+			/*
+			 * In two-pane mode, list items should be given the 'activated'
+			 * state when touched.
+			 */
 			((ScenarioListFragment) getSupportFragmentManager()
 					.findFragmentById(R.id.scenario_list))
 					.setActivateOnItemClick(true);
@@ -68,24 +71,54 @@ public class ScenarioListActivity extends FragmentActivity implements
 	 */
 	@Override
 	public void onItemSelected(String id) {
+		/*
+		 * The id can be 1 or 2 right now depending on which button the user
+		 * pushes
+		 */
 		if (mTwoPane) {
-			// In two-pane mode, show the detail view in this activity by
-			// adding or replacing the detail fragment using a
-			// fragment transaction.
-			Bundle arguments = new Bundle();
-			arguments.putString(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
-			ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
-			// fragment.setDataSource(datasource);
-			getSupportFragmentManager().beginTransaction()
-					.replace(R.id.scenario_detail_container, fragment).commit();
+			/*
+			 * In two-pane mode, show the detail view in this activity by adding
+			 * or replacing the detail fragment using a fragment transaction.
+			 */
+			if (id.equals("1")) {
+				Bundle arguments = new Bundle();
+				arguments
+						.putString(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
+				ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
+				// fragment.setDataSource(datasource);
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.scenario_detail_container, fragment)
+						.commit();
+
+			} else if (id.equals("2")) {
+				Bundle arguments = new Bundle();
+				arguments.putString(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
+				ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
+				// fragment.setDataSource(datasource);
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.scenario_detail_container, fragment)
+						.commit();
+
+			}
 
 		} else {
-			// In single-pane mode, simply start the detail activity
-			// for the selected item ID.
-			Intent detailIntent = new Intent(this,
-					ScenarioDetailGraphActivity.class);
-			detailIntent.putExtra(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
-			startActivity(detailIntent);
+			/*
+			 * In single-pane mode, simply start the detail activity for the
+			 * selected item ID.
+			 */
+			if (id.equals("1")) {
+				Intent detailIntent = new Intent(this,
+						ScenarioDetailGraphActivity.class);
+				detailIntent.putExtra(ScenarioDetailGraphFragment.ARG_ITEM_ID,
+						id);
+				startActivity(detailIntent);
+			} else if (id.equals("2")) {
+				Intent editIntent = new Intent(this,
+						ScenarioDetailEditActivity.class);
+				editIntent.putExtra(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
+				startActivity(editIntent);
+			}
+
 		}
 	}
 }

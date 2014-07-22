@@ -28,7 +28,7 @@ public class DummyContent {
 	static {
 		// Add 3 sample items.
 		addItem(new DummyItem("1", PlannerDefaultQuestionTable.TABLE_PLANNER));
-
+		addItem(new DummyItem("2", "Edit"));
 	}
 
 	private static void addItem(DummyItem item) {

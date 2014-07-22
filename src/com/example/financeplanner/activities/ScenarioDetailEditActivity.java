@@ -8,25 +8,13 @@ import android.view.MenuItem;
 
 import com.example.financefragment.R;
 
-/**
- * An activity representing a single Scenario detail screen. This activity is
- * only used on handset devices. On tablet-size devices, item details are
- * presented side-by-side with a list of items in a {@link ScenarioListActivity}
- * .
- * <p>
- * This activity is mostly just a 'shell' activity containing nothing more than
- * a {@link ScenarioDetailGraphFragment}.
- */
-public class ScenarioDetailGraphActivity extends FragmentActivity {
-
+public class ScenarioDetailEditActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_scenario_detail);
-
-		// Show the Up button in the action bar.
+		setContentView(R.layout.fragment_scenario_edit);
+		// show the up button in the action bar
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-
 		/*
 		 * savedInstanceState is non-null when there is fragment state saved
 		 * from previous configurations of this activity (e.g. when rotating the
@@ -38,23 +26,25 @@ public class ScenarioDetailGraphActivity extends FragmentActivity {
 		 * http://developer.android.com/guide/components/fragments.html
 		 */
 		if (savedInstanceState == null) {
-			// Create the detail fragment and add it to the activity
-			// using a fragment transaction.
+			/*
+			 * Create the detail fragment and add it to the activity using a
+			 * fragment transaction
+			 */
 			Bundle arguments = new Bundle();
+			// WHAT DOES THIS DO?!?!
 			arguments.putString(
-					ScenarioDetailGraphFragment.ARG_ITEM_ID,
+					ScenarioDetailEditFragment.ARG_ITEM_ID,
 					getIntent().getStringExtra(
-							ScenarioDetailGraphFragment.ARG_ITEM_ID));
-			ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
+							ScenarioDetailEditFragment.ARG_ITEM_ID));
+
+			ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.scenario_detail_container, fragment).commit();
 		}
 	}
 
-	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-
 		switch (item.getItemId()) {
 		/*
 		 * This ID represents the Home or Up button. In the case of this
@@ -65,7 +55,6 @@ public class ScenarioDetailGraphActivity extends FragmentActivity {
 		 * http://developer.android.com/design/patterns/navigation.html#up-vs-back
 		 */
 		case android.R.id.home:
-
 			NavUtils.navigateUpTo(this, new Intent(this,
 					ScenarioListActivity.class));
 			return true;

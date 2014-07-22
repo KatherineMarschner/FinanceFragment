@@ -16,7 +16,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -133,7 +132,6 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		GraphDataCalculator calculator = new GraphDataCalculator(questions);
 		int[] netWorthData = calculator.getNetWorthArray();
 		for (int i = 0; i < netWorthData.length; i++) {
-			Log.w("Answer", Integer.toString(netWorthData[i]));
 			mSeries.add(i, netWorthData[i]);
 		}
 
@@ -148,10 +146,6 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		XYSeriesRenderer mRenderer = new XYSeriesRenderer();
 		mRenderer.setColor(Color.WHITE);
 		mRenderer.setLineWidth(10f);
-		// FillOutsideLine fill = new FillOutsideLine(
-		// XYSeriesRenderer.FillOutsideLine.Type.BELOW);
-		// fill.setColor(Color.WHITE);
-		// mRenderer.addFillOutsideLine(fill);
 
 		/* This class is a collection of renderers */
 		XYMultipleSeriesRenderer mMultiRenderer = new XYMultipleSeriesRenderer();
