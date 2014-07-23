@@ -8,6 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import com.android.financeplanner.database.FinanceDataModel;
 import com.example.financefragment.R;
@@ -58,11 +60,12 @@ public class ScenarioDetailEditFragment extends Fragment implements
 		 * Instantiate the data model which will be used to get data from the
 		 * database to fill the list
 		 */
-		datasource = new FinanceDataModel(getActivity());
-		datasource.open();
-
+		// datasource = new FinanceDataModel(getActivity());
+		// datasource.open();
+		//LinearLayout layout = (LinearLayout) view
+		//		.findViewById(R.id.linearLayout_graphEdit);
+	
 		return view;
 
 	}
-
 }

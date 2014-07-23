@@ -98,7 +98,6 @@ public class ScenarioListActivity extends FragmentActivity implements
 				getSupportFragmentManager().beginTransaction()
 						.replace(R.id.scenario_detail_container, fragment)
 						.commit();
-
 			}
 
 		} else {
