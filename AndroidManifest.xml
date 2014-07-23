@@ -31,6 +31,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ScenarioListActivity" />
         </activity>
+        <activity
+            android:name="com.example.financeplanner.activities.ScenarioDetailEditActivity"
+            android:label="@string/title_scenario_detail"
+            android:parentActivityName="com.example.financeplanner.activities.ScenarioListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ScenarioListActivity" />
+        </activity>
        
     </application>
 

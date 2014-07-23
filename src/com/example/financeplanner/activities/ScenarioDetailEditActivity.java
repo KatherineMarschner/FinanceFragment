@@ -40,7 +40,7 @@ public class ScenarioDetailEditActivity extends FragmentActivity {
 			ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.scenario_detail_container, fragment).commit();
+					.add(R.id.scenario_detail, fragment).commit();
 		}
 	}
 
