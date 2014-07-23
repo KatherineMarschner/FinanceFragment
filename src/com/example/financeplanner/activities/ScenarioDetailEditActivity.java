@@ -1,11 +1,16 @@
 package com.example.financeplanner.activities;
 
+import java.util.List;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import android.widget.ListView;
 
+import com.android.financeplanner.database.FinanceDataModel;
+import com.android.financeplanner.model.Question;
 import com.example.financefragment.R;
 
 public class ScenarioDetailEditActivity extends FragmentActivity {
@@ -13,6 +18,18 @@ public class ScenarioDetailEditActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_scenario_edit);
+		/*
+		 * Set the list view, which will contain the questions and their
+		 * modifiable answers
+		 */
+		final ListView listView = (ListView) findViewById(R.id.listView1);
+		/*
+		 * Get all of the questions/answers from the database and store them in
+		 * a list
+		 */
+		FinanceDataModel database = new FinanceDataModel(this);
+		database.open();
+		List<Question> mQuestionBank = database.getAll();
 		// show the up button in the action bar
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		/*
@@ -42,6 +59,12 @@ public class ScenarioDetailEditActivity extends FragmentActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.scenario_detail, fragment).commit();
 		}
+
+		QuestionListAdapter adapter = new QuestionListAdapter(this,
+				mQuestionBank);
+
+		listView.setAdapter(adapter);
+
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
