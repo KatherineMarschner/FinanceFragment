@@ -21,7 +21,7 @@ import com.example.financefragment.R;
 public class QuestionListAdapter extends ArrayAdapter<Question> {
 
 	public QuestionListAdapter(Context context, List<Question> questions) {
-		super(context, R.layout.question_answer_edit_list, questions);
+		super(context, R.layout.question_answer_edit_row, questions);
 	}
 
 	@Override
@@ -32,13 +32,15 @@ public class QuestionListAdapter extends ArrayAdapter<Question> {
 		/* Check if an existing view is being reused, otherwise inflate the view */
 		if (convertView == null) {
 			convertView = LayoutInflater.from(getContext()).inflate(
-					R.layout.question_answer_edit_list, parent, false);
+					R.layout.question_answer_edit_row, parent, false);
 		}
 		/* Create the view for the question and the answer */
 		TextView questionString = (TextView) convertView
 				.findViewById(R.id.questionText);
 		TextView answerField = (TextView) convertView
 				.findViewById(R.id.answerField);
+
+		/* Set listener for the answer field */
 
 		/* Set the values to the views */
 		questionString.setText(question.getmQuestion());

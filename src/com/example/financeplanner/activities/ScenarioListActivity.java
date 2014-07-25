@@ -55,12 +55,6 @@ public class ScenarioListActivity extends FragmentActivity implements
 					.findFragmentById(R.id.scenario_list))
 					.setActivateOnItemClick(true);
 		}
-		// datasource = new FinanceDataModel(this);
-		// datasource.open();
-		//
-		// // mQuestionBank = datasource.getAll();
-		//
-		// databaseLength = datasource.getLength();
 
 		// TODO: If exposing deep links into your app, handle intents here. test
 	}

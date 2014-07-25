@@ -73,7 +73,7 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.fragment_scenario_detail,
+		View view = inflater.inflate(R.layout.fragment_scenario_graph,
 				container, false);
 
 		// I do not understand all of this yet. Each view has multiple layouts.
