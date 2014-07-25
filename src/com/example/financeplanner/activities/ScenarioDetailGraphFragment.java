@@ -25,7 +25,7 @@ import com.android.financeplanner.database.FinanceDataModel;
 import com.android.financeplanner.model.GraphDataCalculator;
 import com.android.financeplanner.model.Question;
 import com.example.financefragment.R;
-import com.example.financefragment.dummy.DummyContent;
+import com.example.financefragment.dummy.MenuButtons;
 
 /**
  * A fragment representing a single Scenario detail screen. This fragment is
@@ -48,7 +48,7 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 	/**
 	 * The dummy content this fragment is presenting.
 	 */
-	private DummyContent.DummyItem mItem;
+	private MenuButtons.MenuButton mItem;
 
 	/**
 	 * Mandatory empty constructor for the fragment manager to instantiate the
@@ -120,7 +120,9 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		 * Convert the data into a series object, and then add all of the data
 		 * to the series. A TimeSeries object is what is graphed
 		 */
-		TimeSeries mSeries = new TimeSeries("Net Worth");
+		TimeSeries netWorthSeries = new TimeSeries("Net Worth");
+		TimeSeries lowerBoundSeries = new TimeSeries("Lower Bound");
+		TimeSeries upperBoundSeries = new TimeSeries("Upper Bound");
 
 		/* This just graphs the user answers, which is not what we want */
 		// for (int i = 0; i < questions.size(); i++) {
@@ -131,8 +133,12 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		/* Class which can calculate data that we actually want to graph */
 		GraphDataCalculator calculator = new GraphDataCalculator(questions);
 		int[] netWorthData = calculator.getNetWorthArray();
-		for (int i = 0; i < netWorthData.length; i++) {
-			mSeries.add(i, netWorthData[i]);
+		int[] lowerBounds = calculator.bounds(netWorthData, 0.05, false);
+		int[] upperBounds = calculator.bounds(netWorthData, 0.05, true);
+		for (int year = 0; year < netWorthData.length; year++) {
+			netWorthSeries.add(year, netWorthData[year]);
+			lowerBoundSeries.add(year, lowerBounds[year]);
+			upperBoundSeries.add(year, upperBounds[year]);
 		}
 
 		/*
@@ -140,19 +146,34 @@ public class ScenarioDetailGraphFragment extends Fragment implements
 		 * object
 		 */
 		XYMultipleSeriesDataset mDataset = new XYMultipleSeriesDataset();
-		mDataset.addSeries(mSeries);
+		mDataset.addSeries(netWorthSeries);
+		mDataset.addSeries(lowerBoundSeries);
+		mDataset.addSeries(upperBoundSeries);
 
-		/* This class can render the data into a graph */
-		XYSeriesRenderer mRenderer = new XYSeriesRenderer();
-		mRenderer.setColor(Color.WHITE);
-		mRenderer.setLineWidth(10f);
+		/* This class can render the net worth data into a graph */
+		XYSeriesRenderer netWorthRenderer = new XYSeriesRenderer();
+		netWorthRenderer.setColor(Color.WHITE);
+		netWorthRenderer.setLineWidth(10f);
+
+		/* Renderer for the upper and lower bounds of the graph */
+		XYSeriesRenderer lowerBoundsRenderer = new XYSeriesRenderer();
+		lowerBoundsRenderer.setColor(Color.RED);
+		XYSeriesRenderer upperBoundsRenderer = new XYSeriesRenderer();
+		upperBoundsRenderer.setColor(Color.BLUE);
 
 		/* This class is a collection of renderers */
 		XYMultipleSeriesRenderer mMultiRenderer = new XYMultipleSeriesRenderer();
-		mMultiRenderer.addSeriesRenderer(mRenderer);
+		mMultiRenderer.addSeriesRenderer(netWorthRenderer);
+		mMultiRenderer.addSeriesRenderer(lowerBoundsRenderer);
+		mMultiRenderer.addSeriesRenderer(upperBoundsRenderer);
 		mMultiRenderer.setApplyBackgroundColor(true);
 		mMultiRenderer.setBackgroundColor(Color.BLACK);
-
+		mMultiRenderer.setShowGrid(true);
+		mMultiRenderer.setChartTitle("Net Worth vs. Time");
+		mMultiRenderer.setXTitle("Time (years)");
+		mMultiRenderer.setYTitle("Net Worth");
+		mMultiRenderer.setXAxisMin(0.);
+		mMultiRenderer.setXAxisMax(10.);
 		// get a view of the line chart and return it. It will be displayed in
 		// the fragment
 

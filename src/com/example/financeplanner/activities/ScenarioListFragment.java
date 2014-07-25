@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.financefragment.dummy.DummyContent;
+import com.example.financefragment.dummy.MenuButtons;
 
 /**
  * A list fragment representing a list of Scenarios. This fragment also supports
@@ -71,9 +71,9 @@ public class ScenarioListFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+		setListAdapter(new ArrayAdapter<MenuButtons.MenuButton>(getActivity(),
 				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, DummyContent.ITEMS));
+				android.R.id.text1, MenuButtons.ITEMS));
 	}
 
 	@Override
@@ -116,7 +116,7 @@ public class ScenarioListFragment extends ListFragment {
 
 		// Notify the active callbacks interface (the activity, if the
 		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		mCallbacks.onItemSelected(MenuButtons.ITEMS.get(position).id);
 	}
 
 	@Override
