@@ -18,7 +18,7 @@ public class ScenarioDetailEditActivity extends FragmentActivity {
 		 * to set the view to 'activity_scenario_edit_detail', but that just
 		 * causes an error. No idea why. Help me obi-wan, you are my only hope.
 		 */
-		setContentView(R.layout.fragment_scenario_edit);
+		setContentView(R.layout.activity_scenario_edit_detail);
 
 		/*
 		 * savedInstanceState is non-null when there is fragment state saved
@@ -45,7 +45,7 @@ public class ScenarioDetailEditActivity extends FragmentActivity {
 			ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
 			fragment.setArguments(arguments);
 			getSupportFragmentManager().beginTransaction()
-					.add(R.id.scenario_detail, fragment).commit();
+					.add(R.id.scenario_detail_container, fragment).commit();
 		}
 
 	}

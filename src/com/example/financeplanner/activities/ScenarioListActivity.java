@@ -78,8 +78,9 @@ public class ScenarioListActivity extends FragmentActivity implements
 				Bundle arguments = new Bundle();
 				arguments
 						.putString(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
+				// might want to see if the fragment has already been created before recreating it
 				ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
-				// fragment.setDataSource(datasource);
+
 				getSupportFragmentManager().beginTransaction()
 						.replace(R.id.scenario_detail_container, fragment)
 						.commit();
