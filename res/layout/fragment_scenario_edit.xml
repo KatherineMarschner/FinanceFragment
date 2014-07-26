@@ -10,7 +10,7 @@
     tools:context=".ScenarioDetailEditFragment" >
     
     <LinearLayout
-        android:id="@+id/linearLayout_graphEdit"
+        android:id="@+id/linearLayout_editFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
