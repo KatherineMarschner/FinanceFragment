@@ -6,6 +6,10 @@ import android.support.v4.app.FragmentActivity;
 
 import com.android.financeplanner.database.FinanceDataModel;
 import com.example.financefragment.R;
+import com.example.financeplanner.fragments.ScenarioDetailCreateFragment;
+import com.example.financeplanner.fragments.ScenarioDetailEditFragment;
+import com.example.financeplanner.fragments.ScenarioDetailGraphFragment;
+import com.example.financeplanner.fragments.ScenarioListFragment;
 
 /**
  * An activity representing a list of Scenarios. This activity has different
@@ -31,8 +35,6 @@ public class ScenarioListActivity extends FragmentActivity implements
 	 * device.
 	 */
 	private boolean mTwoPane;
-	private int databaseLength = 0;
-	private FinanceDataModel datasource;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,22 +76,32 @@ public class ScenarioListActivity extends FragmentActivity implements
 			 * In two-pane mode, show the detail view in this activity by adding
 			 * or replacing the detail fragment using a fragment transaction.
 			 */
+			// edit
 			if (id.equals("1")) {
 				Bundle arguments = new Bundle();
 				arguments
 						.putString(ScenarioDetailGraphFragment.ARG_ITEM_ID, id);
-				// might want to see if the fragment has already been created before recreating it
-				ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
-
+				// might want to see if the fragment has already been created
+				// before recreating it
+				
+				ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
 				getSupportFragmentManager().beginTransaction()
 						.replace(R.id.scenario_detail_container, fragment)
 						.commit();
-
+				// create
 			} else if (id.equals("2")) {
 				Bundle arguments = new Bundle();
+			//	arguments.putString(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
+				ScenarioDetailCreateFragment fragment = new ScenarioDetailCreateFragment();
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.scenario_detail_container, fragment)
+						.commit();
+			//compare
+			} else if (id.equals("3")) {
+				Bundle arguments = new Bundle();
 				arguments.putString(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
-				ScenarioDetailEditFragment fragment = new ScenarioDetailEditFragment();
-				// fragment.setDataSource(datasource);
+				
+				ScenarioDetailGraphFragment fragment = new ScenarioDetailGraphFragment();
 				getSupportFragmentManager().beginTransaction()
 						.replace(R.id.scenario_detail_container, fragment)
 						.commit();
@@ -100,17 +112,24 @@ public class ScenarioListActivity extends FragmentActivity implements
 			 * In single-pane mode, simply start the detail activity for the
 			 * selected item ID.
 			 */
-			if (id.equals("1")) {
+		    if (id.equals("1")) {
+			Intent editIntent = new Intent(this,
+					ScenarioDetailEditActivity.class);
+			editIntent.putExtra(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
+			startActivity(editIntent);
+		    }
+			if (id.equals("2")) {
+				Intent detailIntent = new Intent(this,
+						ScenarioDetailCreateActivity.class);
+			//	detailIntent.putExtra(ScenarioDetailCreateFragment.ARG_ITEM_ID,
+			//			id);
+				startActivity(detailIntent);
+			} else if (id.equals("3")) {
 				Intent detailIntent = new Intent(this,
 						ScenarioDetailGraphActivity.class);
 				detailIntent.putExtra(ScenarioDetailGraphFragment.ARG_ITEM_ID,
 						id);
 				startActivity(detailIntent);
-			} else if (id.equals("2")) {
-				Intent editIntent = new Intent(this,
-						ScenarioDetailEditActivity.class);
-				editIntent.putExtra(ScenarioDetailEditFragment.ARG_ITEM_ID, id);
-				startActivity(editIntent);
 			}
 
 		}

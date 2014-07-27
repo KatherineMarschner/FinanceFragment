@@ -1,4 +1,4 @@
-package com.example.financeplanner.activities;
+package com.example.financeplanner.fragments;
 
 import java.util.List;
 
@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.android.financeplanner.database.FinanceDataModel;
 import com.android.financeplanner.model.Question;
 import com.example.financefragment.R;
+import com.example.financeplanner.activities.QuestionListAdapter;
 
 public class ScenarioDetailEditFragment extends Fragment {
 

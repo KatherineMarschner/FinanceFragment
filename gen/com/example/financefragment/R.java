@@ -14,19 +14,31 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int answerField=0x7f060008;
-        public static final int button1=0x7f060004;
-        public static final int linearLayout_editFragment=0x7f060003;
-        public static final int linearLayout_graphFragment=0x7f060006;
-        public static final int listView1=0x7f060005;
-        public static final int questionText=0x7f060007;
-        public static final int scenario_detail=0x7f060002;
-        public static final int scenario_detail_container=0x7f060000;
-        public static final int scenario_list=0x7f060001;
+        public static final int answerField=0x7f060011;
+        public static final int answer_text_view=0x7f060007;
+        public static final int back_button=0x7f060003;
+        public static final int button1=0x7f06000d;
+        public static final int fragmentContainer=0x7f060000;
+        public static final int graph_button=0x7f060004;
+        public static final int linearLayout_editFragment=0x7f06000c;
+        public static final int linearLayout_graphFragment=0x7f06000f;
+        public static final int listView1=0x7f06000e;
+        public static final int main_list=0x7f060001;
+        public static final int name_text_view=0x7f060005;
+        public static final int next_button=0x7f060002;
+        public static final int questionText=0x7f060010;
+        public static final int question_progress_bar=0x7f060008;
+        public static final int question_text_view=0x7f060006;
+        public static final int scenario_detail=0x7f06000b;
+        public static final int scenario_detail_container=0x7f060009;
+        public static final int scenario_list=0x7f06000a;
     }
     public static final class layout {
-        public static final int activity_scenario_edit_detail=0x7f030000;
-        public static final int activity_scenario_graph_detail=0x7f030001;
+        public static final int activity_fragment=0x7f030000;
+        public static final int activity_main_list=0x7f030001;
+        public static final int activity_planner=0x7f030002;
+        public static final int activity_scenario_edit_detail=0x7f030003;
+        public static final int activity_scenario_graph_detail=0x7f030004;
         /** 
     Layout alias to replace the single-pane version of the layout with a
     two-pane version on Large screens.
@@ -42,11 +54,11 @@ public final class R {
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     
          */
-        public static final int activity_scenario_list=0x7f030002;
-        public static final int activity_scenario_twopane=0x7f030003;
-        public static final int fragment_scenario_edit=0x7f030004;
-        public static final int fragment_scenario_graph=0x7f030005;
-        public static final int question_answer_edit_row=0x7f030006;
+        public static final int activity_scenario_list=0x7f030005;
+        public static final int activity_scenario_twopane=0x7f030006;
+        public static final int fragment_scenario_edit=0x7f030007;
+        public static final int fragment_scenario_graph=0x7f030008;
+        public static final int question_answer_edit_row=0x7f030009;
     }
     public static final class string {
         public static final int action_settings=0x7f040002;

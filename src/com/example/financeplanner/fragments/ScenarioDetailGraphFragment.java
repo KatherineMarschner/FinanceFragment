@@ -1,4 +1,4 @@
-package com.example.financeplanner.activities;
+package com.example.financeplanner.fragments;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,8 @@ import com.android.financeplanner.model.GraphDataCalculator;
 import com.android.financeplanner.model.Question;
 import com.example.financefragment.R;
 import com.example.financefragment.dummy.MenuButtons;
+import com.example.financeplanner.activities.ScenarioDetailGraphActivity;
+import com.example.financeplanner.activities.ScenarioListActivity;
 
 /**
  * A fragment representing a single Scenario detail screen. This fragment is

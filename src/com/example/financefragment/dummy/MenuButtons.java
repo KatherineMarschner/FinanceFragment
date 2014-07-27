@@ -27,8 +27,9 @@ public class MenuButtons {
 
 	static {
 		// Add 3 sample items.
-		addItem(new MenuButton("1", PlannerDefaultQuestionTable.TABLE_PLANNER));
-		addItem(new MenuButton("2", "Edit"));
+		addItem(new MenuButton("1", "Edit"));
+		addItem(new MenuButton("2", "Create"));
+		addItem(new MenuButton("3", "Compare"));
 	}
 
 	private static void addItem(MenuButton item) {

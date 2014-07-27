@@ -1,4 +1,4 @@
-package com.example.financeplanner.activities;
+package com.example.financeplanner.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
