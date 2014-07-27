@@ -2,6 +2,8 @@ package com.android.financeplanner.model;
 
 import java.util.List;
 
+import android.util.Log;
+
 public class GraphDataCalculator {
 
 	// Arrays to be returned by various methods
@@ -68,9 +70,12 @@ public class GraphDataCalculator {
 				 * NPV on that/look it up
 				 */
 				int income = (int) (baseSalary
-						* Math.pow(salaryRaiseRate, year) * (1 - rate401k)
-						* (1 - fedTaxRate) * (1 - stateTaxRate));
+						* (Math.pow(1 + salaryRaiseRate, year))
+						* (1 - rate401k) * (1 - fedTaxRate) * (1 - stateTaxRate));
+				Log.w("Income: ", income + "");
+
 				int expenses = (int) ((monthlyHousingCost + monthlyCarPayment) * 12);
+				Log.w("Expenses: ", expenses + "");
 				// TODO we need a mortgage rate!!!!!!!
 				previousNetWorth = netWorthPerYear[year - 1];
 				netWorthPerYear[year] = previousNetWorth + income - expenses;
