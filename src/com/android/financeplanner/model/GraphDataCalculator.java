@@ -20,7 +20,30 @@ public class GraphDataCalculator {
 	private double mortgageRate;
 	private double fedTaxRate;
 	private double stateTaxRate;
-	private double monthlyCarPayment;
+	private double monthlyCarExpense;
+
+	/* Unimplemented variables */
+	private double locationCostOfLiving;
+	// Expenses
+	private double monthlyUtilitiesExpense;
+	private double monthlyPhoneExpense;
+	private double monthlyFoodExpense;
+	private double monthlyGasExpense;
+	private double monthlyCarMaintenanceExpense;
+	private double monthlyBabyExpense;
+	private double monthlyMiscExpense;
+	private double monthlyHouseMaintenanceExpense;
+	// This will be determined by student loan debt
+	private double monthlyStudentLoanExpense;
+
+	// Debts
+	private double studentLoanDebt;
+	private double studentLoanRate;
+
+	// Revenues
+	private double annualBonus;
+	private double employer401kMatchRate;
+	private double rateOfReturn;
 
 	/**
 	 * Takes a list of questions and fills out the variables necessary for
@@ -40,7 +63,7 @@ public class GraphDataCalculator {
 		monthlyHousingCost = questions.get(4).getmAnswer();
 		fedTaxRate = questions.get(5).getmAnswer() * 0.01;
 		stateTaxRate = questions.get(6).getmAnswer() * 0.01;
-		monthlyCarPayment = questions.get(7).getmAnswer();
+		monthlyCarExpense = questions.get(7).getmAnswer();
 	}
 
 	/**
@@ -74,7 +97,7 @@ public class GraphDataCalculator {
 						* (1 - rate401k) * (1 - fedTaxRate) * (1 - stateTaxRate));
 				Log.w("Income: ", income + "");
 
-				int expenses = (int) ((monthlyHousingCost + monthlyCarPayment) * 12);
+				int expenses = (int) ((monthlyHousingCost + monthlyCarExpense) * 12);
 				Log.w("Expenses: ", expenses + "");
 				// TODO we need a mortgage rate!!!!!!!
 				previousNetWorth = netWorthPerYear[year - 1];

@@ -63,26 +63,38 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f040002;
         public static final int app_name=0x7f040000;
-        public static final int back_button=0x7f040008;
-        public static final int correct_toast=0x7f040005;
-        public static final int delete_button=0x7f04000a;
-        public static final int false_button=0x7f040003;
-        public static final int graph_button=0x7f040009;
-        public static final int hello_world=0x7f040014;
-        public static final int incorrect_toast=0x7f040006;
-        public static final int next_button=0x7f040007;
-        public static final int question_401k=0x7f04000e;
-        public static final int question_carPayment=0x7f040012;
-        public static final int question_fedTaxRate=0x7f040010;
-        public static final int question_mortgage=0x7f04000f;
-        public static final int question_netWorth=0x7f04000b;
-        public static final int question_raise=0x7f04000d;
-        public static final int question_salary=0x7f04000c;
-        public static final int question_stateTaxRate=0x7f040011;
-        public static final int title_activity_create_scenario=0x7f040013;
+        public static final int back_button=0x7f040004;
+        public static final int delete_button=0x7f040006;
+        public static final int graph_button=0x7f040005;
+        public static final int next_button=0x7f040003;
+        public static final int q_annualBonus=0x7f04001d;
+        public static final int q_employer401kMatchRate=0x7f04001e;
+        /**  Unused questions 
+         */
+        public static final int q_locationCostOfLiving=0x7f040011;
+        public static final int q_monthlyBabyExpense=0x7f040017;
+        public static final int q_monthlyCarMaintenanceExpense=0x7f040016;
+        public static final int q_monthlyFoodExpense=0x7f040014;
+        public static final int q_monthlyGasExpense=0x7f040015;
+        public static final int q_monthlyHouseMaintenanceExpense=0x7f040019;
+        public static final int q_monthlyMiscExpense=0x7f040018;
+        public static final int q_monthlyPhoneExpense=0x7f040013;
+        public static final int q_monthlyStudentLoanExpense=0x7f04001a;
+        public static final int q_monthlyUtilitiesExpense=0x7f040012;
+        public static final int q_rateOfReturn=0x7f04001f;
+        public static final int q_studentLoanDebt=0x7f04001b;
+        public static final int q_studentLoanRate=0x7f04001c;
+        public static final int question_401k=0x7f04000a;
+        public static final int question_carPayment=0x7f04000e;
+        public static final int question_fedTaxRate=0x7f04000c;
+        public static final int question_mortgage=0x7f04000b;
+        public static final int question_netWorth=0x7f040007;
+        public static final int question_raise=0x7f040009;
+        public static final int question_salary=0x7f040008;
+        public static final int question_stateTaxRate=0x7f04000d;
+        public static final int title_activity_create_scenario=0x7f04000f;
         public static final int title_scenario_detail=0x7f040001;
-        public static final int title_scenario_list=0x7f040015;
-        public static final int true_button=0x7f040004;
+        public static final int title_scenario_list=0x7f040010;
     }
     public static final class style {
         /** 

@@ -4,10 +4,6 @@
     <string name="app_name">FinanceFragment</string>
     <string name="title_scenario_detail">Scenario Detail</string>
 	<string name="action_settings">Settings</string>
-    <string name="false_button">False</string>
-    <string name="true_button">True</string>
-    <string name="correct_toast">Correct!</string>
-    <string name="incorrect_toast">Incorrect!</string>
     <string name="next_button">Next</string>
     <string name="back_button">Back</string>
     <string name="graph_button">Graph</string>
@@ -21,8 +17,23 @@
     <string name="question_stateTaxRate">What is your state income tax rate?</string>
     <string name="question_carPayment">What is your monthly car payment?</string>
     <string name="title_activity_create_scenario">CreateScenarioActivity</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_scenario_list">Scenarios</string>
     
+    <!-- Unused questions -->
+    <string name="q_locationCostOfLiving">Cost of living index</string>
+    <string name="q_monthlyUtilitiesExpense">Monthly Utilities Expense</string>
+    <string name="q_monthlyPhoneExpense">Monthly Phone Expense</string>
+    <string name="q_monthlyFoodExpense">Monthly Food Expense</string>
+    <string name="q_monthlyGasExpense">Monthly Gas Expense</string>
+    <string name="q_monthlyCarMaintenanceExpense">Monthly Car Maintenance Expense</string>
+    <string name="q_monthlyBabyExpense">Monthly Baby Expense</string>
+    <string name="q_monthlyMiscExpense">Monthly Miscellaneous Expense</string>
+    <string name="q_monthlyHouseMaintenanceExpense">Monthly House Maintenance Expense</string>
+    <string name="q_monthlyStudentLoanExpense">Monthly Student Loan Payment</string>
+    <string name="q_studentLoanDebt">Total Student Debt</string>
+    <string name="q_studentLoanRate">Student Loan Interest Rate</string>
+    <string name="q_annualBonus">Annual Bonus</string>
+    <string name="q_employer401kMatchRate">Employer Match Rate on 401(k)</string>
+    <string name="q_rateOfReturn">Annual Investment Rate of Return</string>
     
 </resources>
